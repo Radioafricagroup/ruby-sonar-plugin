@@ -31,7 +31,15 @@ public class SimpleCovRcovJsonParserImpl implements SimpleCovRcovJsonParser
         JsonParser parser = new JsonParser();
 
         JsonObject resultJsonObject = parser.parse(fileString).getAsJsonObject();
-        JsonObject coverageJsonObj = resultJsonObject.get("RSpec").getAsJsonObject().get("coverage").getAsJsonObject();
+
+        // Look for both RSpec and MiniTest in the report
+        JsonObject coverageJsonObj;
+        if (resultJsonObject.get("RSpec") != null) {
+            coverageJsonObj = resultJsonObject.get("RSpec").getAsJsonObject().get("coverage").getAsJsonObject(); 
+        }
+        else {
+            coverageJsonObj = resultJsonObject.get("MiniTest").getAsJsonObject().get("coverage").getAsJsonObject(); 
+        }
 
 
         // for each file in the coverage report

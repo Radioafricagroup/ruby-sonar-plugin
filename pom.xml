@@ -6,10 +6,28 @@
 	<groupId>com.godaddy.sonar</groupId>
 	<artifactId>sonar-ruby-plugin</artifactId>
 	<packaging>sonar-plugin</packaging>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 
 	<name>Sonar Ruby Plugin</name>
 	<description>Plugin to report ruby code coverage into sonar</description>
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Go Daddy</name>
+        </developer>
+        <developer>
+            <name>Andrew Jones</name>
+        </developer>
+    </developers>
+
+    <organization>
+        <name>Go Daddy and Andrew Jones</name>
+        <url>https://github.com/canoe-drew/ruby-sonar-plugin</url>
+    </organization>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -95,6 +113,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<pluginClass>com.godaddy.sonar.ruby.RubyPlugin</pluginClass>
+                    <pluginUrl>https://github.com/canoe-drew/ruby-sonar-plugin</pluginUrl>
 				</configuration>
 			</plugin>
 			<plugin>

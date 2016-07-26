@@ -1,15 +1,25 @@
 SonarQube Ruby Plugin
 =================
+
+In this fork:
+* includes smartshowltd's change from Simple JSON to Gson
+* looks for both 'MiniTest' and 'RSpec' in the coverage report from simplecov-rcov
+
+
 ##Description / Features
-The plugin enables analysis of Ruby projects within SonarQube (most recently tested against version 4.5.5 LTS)
+The plugin enables analysis of Ruby projects within SonarQube (most recently tested against version 5.3)
 
 Currently the plugin captures basic metrics (Lines of Code, Number of classes and packages, Comment percentage), 
 complexity on each file, and a visual line-by-line code coverage report.
 
 It relies on well-known external tools: [SimpleCov](https://github.com/colszowka/simplecov), [SimpleCov-RCov](https://github.com/fguillen/simplecov-rcov) and [Metric_Fu](https://github.com/metricfu/metric_fu/)
 
+##Compile
+mvn clean
+mvn install
+
 ##Install
-Download the plugin into the SONARQUBE_HOME/extensions/plugins directory
+There is a compiled version of the plugin in the 'target' directory.  Download the plugin into the SONARQUBE_HOME/extensions/plugins directory.
 
 ##Usage
 Make sure the property sonar.language is set to ruby: `sonar.language=ruby` in the sonar-project.properties file
@@ -38,9 +48,20 @@ We referenced the [javascript sonar plugin](https://github.com/SonarCommunity/so
 Our complexity sensor and code coverage sensor borrow heavily from the javascript plugin's equivalent sensors.
 
 ##Tool Versions
-This plugin has been tested with the following dependency versions
+This plugin has been tested with the following dependency versions:
+
 * [SonarQube](http://www.sonarqube.org/downloads/) 4.5.5 LTS
 * SonarQube Runner 2.3 (or newer)
 * metric_fu gem version 4.12.0 (latest at time of edit)
 * simplecov 0.8.2
 * simplecov-rcov 0.2.3
+
+And also these dependency versions:
+
+* [SonarQube](http://www.sonarqube.org/downloads/) 5.3
+* sonar-scanner-2.6.1
+* metric_fu gem version 4.12.0 (latest at time of edit)
+* simplecov 0.12.0
+* simplecov-rcov 0.2.3
+
+
